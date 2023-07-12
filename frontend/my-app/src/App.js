@@ -8,8 +8,8 @@ import {
   NavLink,
   Switch,
 } from "react-router-dom";
-import Departamento from "./componentes/Departamento";
-import Empleado from "./componentes/Empleado";
+import {Departamento} from "./componentes/Departamento";
+import {Empleado} from "./componentes/Empleado";
 
 function App() {
   return (

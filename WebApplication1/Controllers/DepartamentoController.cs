@@ -66,11 +66,11 @@ namespace WebApplication1.Controllers
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
 
                 {
-                   SqlParameter unitParam= myCommand.Parameters.AddWithValue("@DepartamentoNombre", departamento.DepartamentoNombre);
-                    if(departamento.DepartamentoNombre == null)
-                    {
-                        unitParam.Value = DBNull.Value; 
-                    }
+                     myCommand.Parameters.AddWithValue("@DepartamentoNombre", departamento.DepartamentoNombre ?? (object)DBNull.Value);
+                    ///if(departamento.DepartamentoNombre == null)
+                    //{
+                    //   unitParams.Value = DBNull.Value; 
+                    //}
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
